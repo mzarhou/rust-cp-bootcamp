@@ -23,19 +23,17 @@ bool check_str(std::string str)
     return st.size() == 0;
 }
 
-void print_message(bool b)
-{
-    std::cout << (b ? "Yes" : "No") << std::endl;
-}
-
 int main()
 {
     int n;
     std::string line;
+
     std::cin >> n;
+    std::cin.get();
+
     for (int i = 0; i < n; i++)
     {
-        std::cin >> line;
-        print_message(check_str(line));
+        std::getline(std::cin, line, '\n');
+        std::cout << (check_str(line) ? "Yes" : "No") << std::endl;
     }
 }
