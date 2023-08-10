@@ -22,16 +22,16 @@ fn main() {
     }
 
     let mut v = vec![vec![0; n + 1]; n + 1];
+    let md = 1e9 as u64 + 7;
     v[0][1] = 1;
     for i in 1..=n {
         for j in 1..=n {
             if chars[i - 1][j - 1] == '*' {
                 v[i][j] = 0;
             } else {
-                v[i][j] = v[i - 1][j] + v[i][j - 1];
+                v[i][j] = (v[i - 1][j] + v[i][j - 1]) % md;
             }
         }
     }
-    let m = 1e9 as u64 + 7;
-    println!("{}", v[n][n] % m);
+    println!("{}", v[n][n])
 }
