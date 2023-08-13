@@ -22,6 +22,9 @@ fn main() {
     let e = numbers[4] % m;
     let f = numbers[5] % m;
 
-    let result = ((((a * b) % m) * c) - (((d * e) % m) * f)) % m;
+    let mut result = ((((a * b) % m) * c) % m - (((d * e) % m) * f) % m) % m;
+    if result < 0 {
+        result += m;
+    }
     println!("{}", result);
 }
