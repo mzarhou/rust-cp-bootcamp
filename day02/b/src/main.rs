@@ -15,12 +15,11 @@ where
     (v[0].clone(), v[1].clone())
 }
 
-fn solve(a: u64, b: u64) -> u64 {
-    let m = (1e9 as u64) + 7;
+fn expo(a: u64, b: u64, m: u64) -> u64 {
     if b == 0 {
         return 1;
     }
-    let result = solve(a, b / 2);
+    let result = expo(a, b / 2, m);
     if b % 2 != 0 {
         return (((result * result) % m) * (a % m)) % m;
     }
