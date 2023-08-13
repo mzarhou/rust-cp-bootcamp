@@ -27,12 +27,13 @@ fn expo(a: u64, b: u64, m: u64) -> u64 {
 }
 
 fn main() {
+    let m = (1e9 as u64) + 7;
     let mut buf = String::new();
     stdin().read_line(&mut buf).unwrap();
     let n: usize = buf.trim().parse().unwrap();
 
     for _ in 0..n {
         let (a, b) = next_tuple::<u64>();
-        println!("{}", solve(a, b));
+        println!("{}", expo(a, b, m));
     }
 }
