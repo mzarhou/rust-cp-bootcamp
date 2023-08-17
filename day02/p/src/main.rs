@@ -31,7 +31,7 @@ fn main() {
             let v = next_line::<u64>();
             (v[0], v[1], v[2])
         };
-        let result = expo(a, expo(b, c, m), m);
+        let result = expo(a, expo(b, c, m - 1), m);
         println!("{}", result);
     }
 }
